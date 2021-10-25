@@ -41,4 +41,8 @@ Scrape data from Soundcloud to get the link of the song (using scrape_music.ipyn
 - There are 2 feature:\
  Real-time expression prediction\
  Take pictures then predict expressions from that picture and play the appropriate music
- 
+
+## Future Works
+- Build better predictive models
+- Raise my prediction of 8 class of expressions
+- More features when playing music

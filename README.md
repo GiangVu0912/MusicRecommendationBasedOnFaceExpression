@@ -1,4 +1,6 @@
 # MusicRecommendationBasedOnFaceExpression
+![alt text](https://happinesson.com/wp-content/uploads/2019/08/how-to-be-happy-by-listening-to-music-blog-1080x608.jpg)
+
 Please read pdf file to understand all the steps I take to complete this project:
 https://github.com/GiangVu0912/MusicRecommendationBasedOnFaceExpression/blob/main/FINAL%20PROJECT.pdf
 
@@ -13,9 +15,9 @@ People tend to express their emotions, mainly by their facial expressions. Music
 ### Preprocess Image Data:
 - Dataset is a part of AffectNetDataset, include: 420.000 images and 8 class of expression
 - Preprocess:\
-    Split a single image folder into 8 expression folders from the annotation file\
+    Split a single image folder into 8 expression folders from the annotation file (using seperate_data_from_one_folder.py\
     Filter out 5 classes each class 15,000 photos: angry, happy, neutral, surprise, sad\
-    Extract data from photo to facemesh on white canvas (using MediaPipe Facemesh)
+    Extract data from photo to facemesh on white canvas (using MediaPipe Facemesh) (using create_data_landmarks_on_canvas.py)
  
 ### Preprocess Music Data:
 - Dataset contain 1 file csv name music_data.csv and 400 song of mp3
@@ -26,9 +28,15 @@ Genre of the music file\
 Participant's mood prior to playing the game, ranging from 1 to 5, 1 is really bad and 5 is really good\
 Liking (1 if participant decided to report he liked the song).
 - Preprocess:\
-Filter out the songs with the mood before listening to the music corresponding to 5 emotions and have a high average like score and have a feeling about the song that matches the emotion. For example: the emotion is angry, choose mood = 1, likeness > 0.5, calmness > 0.5\
+Filter out the songs with the mood before listening to the music corresponding to 5 emotions and have a high average like score and have a feeling about the song that matches the emotion. For example: the emotion is angry, choose mood = 1, likeness > 0.5, calmness > 0.5 (using process_music_dataset.ipynb)\
 Upload mp3 files to Soundcloud\
-Scrape data from Soundcloud to get the link of the song.
+Scrape data from Soundcloud to get the link of the song (using scrape_music.ipynb)
 
 ### Train Model
+![alt text](https://github.com/GiangVu0912/MusicRecommendationBasedOnFaceExpression/blob/main/Model.jpg)
 
+### Build App
+- Using app.py to run the app 
+- There are 2 feature:
+ Real-time expression prediction\
+ Take pictures then predict expressions from that picture and play the appropriate music
